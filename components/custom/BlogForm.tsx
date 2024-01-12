@@ -16,6 +16,8 @@ import { useUser } from "@clerk/clerk-react"
 import { useToast } from "@/components/ui/use-toast"
 import { blog } from "@/lib/types"
 import { markdownToDraft } from 'markdown-draft-js';
+import { useRouter } from 'next/navigation'
+import { Loader2 } from 'lucide-react';
 
 type Props = {
     type: "Create" | "Update"
@@ -26,10 +28,10 @@ const BlogForm = (props: Props) => {
     const [files, setFiles] = useState<File[]>([])
     const [imagetype, setImageType] = useState(0)
     const [submitting, setSubmitting] = useState(false)
-
     const { startUpload } = useUploadThing('imageUploader')
     const { user } = useUser();
     const { toast } = useToast()
+    const router = useRouter()
 
     const form = useForm<z.infer<typeof blogFormSchema>>({
         resolver: zodResolver(blogFormSchema),
@@ -52,23 +54,33 @@ const BlogForm = (props: Props) => {
                 }
                 uploadedImageUrl = uploadedImages[0].url
             }
-            const input = { title: values.title, category: values.category, content: values.content, blogImage: uploadedImageUrl }
-            // const response = await fetch("/api/blogs", {
-            //     method: "POST",
-            //     body: JSON.stringify(input),
-            // });
-            const response = await fetch("/api/blogs", {
-                method: "PUT",
-                body: JSON.stringify({
-                    id: props.blog?.id,
-                    input: input
+            if(props.type === "Create") {
+                const input = { title: values.title, category: values.category, content: values.content, username: user?.fullName, blogImage: uploadedImageUrl, profileImage: user?.imageUrl }
+                const response = await fetch("/api/blogs", {
+                    method: "POST",
+                    body: JSON.stringify(input),
+                });
+                if(!response.ok) throw Error("Something went wrong, Status code: " + response.status);
+                form.reset();
+                toast({
+                    description: "Blog Added successfully 🫡🫡",
                 })
-            })
-            if(!response.ok) throw Error("Something went wrong, Status code: " + response.status);
-            form.reset();
-            toast({
-                description: "Blog Updated successfully 🫡🫡",
-            })
+            } else {
+                const input = { title: values.title, category: values.category, content: values.content, blogImage: uploadedImageUrl }
+                const response = await fetch("/api/blogs", {
+                    method: "PUT",
+                    body: JSON.stringify({
+                        id: props.blog?.id,
+                        input: input
+                    })
+                })
+                if(!response.ok) throw Error("Something went wrong, Status code: " + response.status);
+                form.reset();
+                toast({
+                    description: "Blog Updated successfully 🫡🫡",
+                })
+            }
+            router.push('/home')
         } catch (err) {
             console.error(err);
             toast({
@@ -98,6 +110,19 @@ const BlogForm = (props: Props) => {
                     />
                     <FormField
                         control={form.control}
+                        name="category"
+                        render={({ field }) => (
+                        <FormItem className="w-full">
+                            <FormLabel className="text-[30px] sm:text-[35px] font-bold text-slate-700">Choose the Category </FormLabel>
+                            <FormControl>
+                                <Dropdown onChangeHandler={field.onChange} value={field.value} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
                         name="content"
                         render={({ field }) => (
                             <FormItem>
@@ -113,19 +138,6 @@ const BlogForm = (props: Props) => {
                             </FormControl>
                             <FormMessage />
                             </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="category"
-                        render={({ field }) => (
-                        <FormItem className="w-full">
-                            <FormLabel className="text-[30px] sm:text-[35px] font-bold text-slate-700">Choose the Category </FormLabel>
-                            <FormControl>
-                                <Dropdown onChangeHandler={field.onChange} value={field.value} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
                         )}
                     />
                     <FormField
@@ -151,7 +163,7 @@ const BlogForm = (props: Props) => {
                             </FormItem>
                         )}
                     />
-                    <Button className="w-full z-[1]" type="submit">Submit</Button>
+                    <Button className="w-full z-[1]" type="submit" disabled={submitting}>{props.type} blog</Button>
                 </form>
             </Form>
         </div>

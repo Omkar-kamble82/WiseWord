@@ -2,6 +2,7 @@
 import { useToast } from "@/components/ui/use-toast"
 import { Button } from "../ui/button"
 import { useRouter } from 'next/navigation'
+import { useState } from "react"
 
 type Props = {
     id: string
@@ -9,10 +10,12 @@ type Props = {
 
 const Deletebutton = (props: Props) => {
     const { toast } = useToast()
+    const [submitting, setSubmitting] = useState(false)
     const router = useRouter()
 
     const deleteblog = async () => {
         try {
+            setSubmitting(true)
             const response = await fetch("/api/blogs", {
                 method: "DELETE",
                 body: JSON.stringify({
@@ -29,11 +32,13 @@ const Deletebutton = (props: Props) => {
             toast({
                 description: "Something went wrong 😨😨",
             })
+        } finally {
+            setSubmitting(false);
         }
     }
     return (
         <div>
-            <Button onClick={deleteblog}>Delete</Button>
+            <Button onClick={deleteblog} disabled={submitting}>Delete Blog</Button>
         </div>
     )
 }
