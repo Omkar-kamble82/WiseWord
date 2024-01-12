@@ -1,7 +1,14 @@
 import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
-    publicRoutes: ["/"]
+    publicRoutes: [
+        '/',
+        '/events/:id',
+        '/api/uploadthing'
+    ],
+    ignoredRoutes: [
+        '/api/uploadthing'
+    ]
 });
 
 export const config = {

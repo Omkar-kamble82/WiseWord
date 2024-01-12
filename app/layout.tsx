@@ -3,10 +3,12 @@ import './globals.css'
 import { Poppins } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/custom/Footer'
+import { Toaster } from "@/components/ui/toaster"
 
-const roboto = Poppins({
-  weight: '400',
+const poppins = Poppins({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
 })
 
 export const metadata: Metadata = {
@@ -22,8 +24,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body className={`${poppins.variable} bg-slate-50`}>
           {children}
+          <Toaster />
           <Footer />
         </body>
       </html>

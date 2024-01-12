@@ -10,7 +10,7 @@ export default function Home() {
   if(userId) redirect("/home")
 
   return (
-    <main className="bg-slate-50">
+    <main>
       <AuthNavbar />
       <Homebanner />
     </main>
