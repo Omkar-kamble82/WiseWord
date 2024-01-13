@@ -18,8 +18,6 @@ export default async function page() {
                     <Image src={blog.blogImage} alt={blog.title} height={40} width={40}/>
                 </div>
             ))}
-            <UserButton afterSignOutUrl="/" />
-            <Link href="/blog/create"><Button>create</Button></Link>
         </div>
     );
 };
