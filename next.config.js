@@ -7,6 +7,8 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'utfs.io',
             port: ''
+            }, {
+                hostname: "img.clerk.com",
             }
         ]
         }

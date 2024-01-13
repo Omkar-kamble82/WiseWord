@@ -24,7 +24,7 @@ export async function POST(req: Request) {
         filter: { userId },
         });
 
-        const relevantNotes = await prisma.blog.findMany({
+        const relevantBlogs = await prisma.blog.findMany({
         where: {
             id: {
             in: vectorQueryResponse.matches.map((match) => match.id),
@@ -32,15 +32,16 @@ export async function POST(req: Request) {
         },
         });
 
-        console.log("Relevant notes found: ", relevantNotes);
+        console.log("Relevant notes found: ", relevantBlogs);
 
         const systemMessage: ChatCompletionMessage = {
-        role: "assistant",
+        /* @ts-ignore */
+        role: "system",
         content:
-            "You are an intelligent note-taking app. You answer the user's question based on their existing notes. " +
-            "The relevant notes for this query are:\n" +
-            relevantNotes
-            .map((note) => `Title: ${note.title}\n\nContent:\n${note.content}`)
+            "You are an intelligent blog app. You answer the user's question based on their existing blogs. " +
+            "The relevant blogs for this query are:\n" +
+            relevantBlogs
+            .map((blog) => `Title: ${blog.title}\n\nContent:\n${blog.content}\n\category:\n${blog.category}`)
             .join("\n\n"),
         };
 
