@@ -80,6 +80,7 @@ const BlogForm = (props: Props) => {
                     description: "Blog Updated successfully 🫡🫡",
                 })
             }
+            router.refresh()
             router.push('/home')
         } catch (err) {
             console.error(err);
