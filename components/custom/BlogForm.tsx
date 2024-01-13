@@ -17,7 +17,6 @@ import { useToast } from "@/components/ui/use-toast"
 import { blog } from "@/lib/types"
 import { markdownToDraft } from 'markdown-draft-js';
 import { useRouter } from 'next/navigation'
-import { Loader2 } from 'lucide-react';
 
 type Props = {
     type: "Create" | "Update"
@@ -26,7 +25,6 @@ type Props = {
 
 const BlogForm = (props: Props) => {
     const [files, setFiles] = useState<File[]>([])
-    const [imagetype, setImageType] = useState(0)
     const [submitting, setSubmitting] = useState(false)
     const { startUpload } = useUploadThing('imageUploader')
     const { user } = useUser();
@@ -148,17 +146,11 @@ const BlogForm = (props: Props) => {
                             <FormItem className="">
                                 <FormLabel className="text-[30px] sm:text-[35px] font-bold text-slate-700">Image </FormLabel>
                                 <FormControl>
-                                    <div>
-                                        <span className="flex items-center gap-2 mb-4">
-                                            <Button>Uplaod a image</Button>
-                                            <Button>Choose from gallery</Button>
-                                        </span>
-                                        <FileUploader 
-                                            onFieldChange={field.onChange}
-                                            imageUrl={field.value}
-                                            setFiles={setFiles}
-                                        />
-                                    </div>
+                                    <FileUploader 
+                                        onFieldChange={field.onChange}
+                                        imageUrl={field.value}
+                                        setFiles={setFiles}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

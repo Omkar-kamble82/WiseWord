@@ -15,8 +15,8 @@ export default async function Updateblog({ params: { id } }: UpdateEventProps) {
         }
     }) as blog
     return (
-        <div className="w-full py-4 max-w-7xl mx-auto">
-            <h1 className="font-bold text-4xl text-center">Update Blog</h1>
+        <div className="w-full py-5 max-w-7xl mx-auto">
+            <h1 className="font-bold text-[45px] sm:text-[55px] text-center">Update Blog</h1>
             <BlogForm type={"Update"} blog={blog}/>
         </div>
     )

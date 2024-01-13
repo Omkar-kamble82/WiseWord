@@ -44,14 +44,14 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
     return (
         <div
         className={cn(
-            "bottom-0 right-0 z-10 w-full max-w-[500px] p-1 xl:right-36",
+            "bottom-0 right-0 z-[12] w-full max-w-[500px] p-1 xl:right-36",
             open ? "fixed" : "hidden",
         )}
         >
-        <button onClick={onClose} className="mb-1 ms-auto block">
+        <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
+        <button onClick={onClose} className="m-2 ms-auto block">
             <XCircle size={30} />
         </button>
-        <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
             <div className="mt-3 h-full overflow-y-auto px-3" ref={scrollRef}>
             {messages.map((message) => (
                 <ChatMessage message={message} key={message.id} />
@@ -75,7 +75,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
             {!error && messages.length === 0 && (
                 <div className="flex h-full items-center justify-center gap-3">
                 <Bot />
-                Ask the AI a question about your notes
+                Ask the AI a question about the blogs
                 </div>
             )}
             </div>
@@ -88,7 +88,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
                 type="button"
                 onClick={() => setMessages([])}
             >
-                <Trash />
+                <Trash className="text-rose-500" />
             </Button>
             <Input
                 value={input}
@@ -96,7 +96,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
                 placeholder="Say something..."
                 ref={inputRef}
             />
-            <Button type="submit">Send</Button>
+            <Button className="ml-1" type="submit">Ask</Button>
             </form>
         </div>
         </div>

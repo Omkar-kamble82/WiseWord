@@ -14,7 +14,8 @@ type Props = {
 const Dropdown = (props: Props) => {
     return (
         <div className="relative z-[3]">
-            <Select className="w-[100%]" onValueChange={props.onChangeHandler} defaultValues={props.value}>
+            {/* @ts-ignore */}
+            <Select onValueChange={props.onChangeHandler} defaultValues={props.value}>
                 <SelectTrigger className="">
                     <SelectValue placeholder="Category" />
                 </SelectTrigger>
