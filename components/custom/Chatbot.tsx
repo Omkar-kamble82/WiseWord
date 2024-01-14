@@ -24,7 +24,6 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
         error,
     } = useChat();
 
-    const inputRef = useRef<HTMLInputElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -33,22 +32,16 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
         }
     }, [messages]);
 
-    useEffect(() => {
-        if (open) {
-        inputRef.current?.focus();
-        }
-    }, [open]);
-
     const lastMessageIsUser = messages[messages.length - 1]?.role === "user";
 
     return (
         <div
         className={cn(
-            "bottom-0 right-0 z-[12] w-full max-w-[500px] p-1 xl:right-36",
+            "bottom-0 right-0 z-[12] w-full max-w-[500px] p-1 xl:right-3",
             open ? "fixed" : "hidden",
         )}
         >
-        <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
+        <div className="flex h-[500px] flex-col rounded border bg-background shadow-xl">
         <button onClick={onClose} className="m-2 ms-auto block">
             <XCircle size={30} />
         </button>
@@ -60,7 +53,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
                 <ChatMessage
                 message={{
                     role: "assistant",
-                    content: "Thinking...",
+                    content: "Wiseword is thinking...",
                 }}
                 />
             )}
@@ -94,7 +87,6 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
                 value={input}
                 onChange={handleInputChange}
                 placeholder="Say something..."
-                ref={inputRef}
             />
             <Button className="ml-1" type="submit">Ask</Button>
             </form>

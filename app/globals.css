@@ -65,12 +65,17 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background overflow-x-hidden text-foreground;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .cardiv {
+    width: 75vw;
   }
 }

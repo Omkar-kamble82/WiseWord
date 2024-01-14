@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -44,15 +45,15 @@ const BlogForm = (props: Props) => {
     async function onSubmit(values: z.infer<typeof blogFormSchema>) {
         try {
             setSubmitting(true)
-            let uploadedImageUrl = values.blogImage;
-            if(files.length > 0) {
-                const uploadedImages = await startUpload(files)
-                if(!uploadedImages) {
-                    return
-                }
-                uploadedImageUrl = uploadedImages[0].url
-            }
             if(props.type === "Create") {
+                let uploadedImageUrl = values.blogImage;
+                if(files.length > 0) {
+                    const uploadedImages = await startUpload(files)
+                    if(!uploadedImages) {
+                        return
+                    }
+                    uploadedImageUrl = uploadedImages[0].url
+                }
                 const input = { title: values.title, category: values.category, content: values.content, username: user?.fullName, blogImage: uploadedImageUrl, profileImage: user?.imageUrl }
                 const response = await fetch("/api/blogs", {
                     method: "POST",
@@ -63,7 +64,22 @@ const BlogForm = (props: Props) => {
                 toast({
                     description: "Blog Added successfully 🫡🫡",
                 })
+                router.push("/")
+                router.refresh()
             } else {
+                let uploadedImageUrl
+                if(props.blog?.blogImage !== values.blogImage) {
+                    uploadedImageUrl = values.blogImage;
+                    if(files.length > 0) {
+                        const uploadedImages = await startUpload(files)
+                        if(!uploadedImages) {
+                            return
+                        }
+                        uploadedImageUrl = uploadedImages[0].url
+                    }
+                } else {
+                    uploadedImageUrl = props.blog?.blogImage
+                }
                 const input = { title: values.title, category: values.category, content: values.content, blogImage: uploadedImageUrl }
                 const response = await fetch("/api/blogs", {
                     method: "PUT",
@@ -77,9 +93,9 @@ const BlogForm = (props: Props) => {
                 toast({
                     description: "Blog Updated successfully 🫡🫡",
                 })
+                router.push('/')
+                router.refresh()
             }
-            router.refresh()
-            router.push('/home')
         } catch (err) {
             console.error(err);
             toast({

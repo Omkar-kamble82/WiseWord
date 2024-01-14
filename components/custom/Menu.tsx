@@ -23,10 +23,10 @@ const Menu = (props: Props) => {
         <DropdownMenu>
             <DropdownMenuTrigger className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/9 h-10 sm:h-12 px-4 py-2">Menu</DropdownMenuTrigger>
             <DropdownMenuContent>
-                <Link href="/blog/create"><DropdownMenuLabel>Create Blog</DropdownMenuLabel></Link>
+                <Link href="/blog/create"><DropdownMenuItem className="font-bold">Create Blog</DropdownMenuItem></Link>
                 <DropdownMenuSeparator />
-                <Link href={`/blogs/${name.split(` `).join(`-`)}`}><DropdownMenuItem>My Blogs</DropdownMenuItem></Link>
-                <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
+                <Link href={`/blogs/${name.split(` `).join(`-`)}`}><DropdownMenuItem className="font-semibold">My Blogs</DropdownMenuItem></Link>
+                <DropdownMenuItem onClick={logout} className="text-rose-500 font-semibold">Logout</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )

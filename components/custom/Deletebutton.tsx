@@ -3,6 +3,7 @@ import { useToast } from "@/components/ui/use-toast"
 import { Button } from "../ui/button"
 import { useRouter } from 'next/navigation'
 import { useState } from "react"
+import { Trash } from 'lucide-react';
 
 type Props = {
     id: string
@@ -26,7 +27,8 @@ const Deletebutton = (props: Props) => {
             toast({
                 description: "Blog Deleted successfully 🫡🫡",
             })
-            router.push('/home')
+            router.push('/')
+            router.refresh()
         } catch(err) {
             console.error(err);
             toast({
@@ -38,7 +40,7 @@ const Deletebutton = (props: Props) => {
     }
     return (
         <div>
-            <Button onClick={deleteblog} disabled={submitting}>Delete Blog</Button>
+            <Button variant={"destructive"} onClick={deleteblog} disabled={submitting}><Trash size={14} className="mr-[5px]"/>Delete Blog</Button>
         </div>
     )
 }

@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Poppins } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
-import Footer from '@/components/custom/Footer'
 import { Toaster } from "@/components/ui/toaster"
+
+import Footer from '@/components/custom/Footer'
 
 const poppins = Poppins({
   subsets: ['latin'],

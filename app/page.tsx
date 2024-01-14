@@ -1,6 +1,6 @@
 import AuthNavbar from "@/components/custom/AuthNavbar";
-import Footer from "@/components/custom/Footer";
 import Homebanner from "@/components/custom/Homebanner";
+
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 

@@ -1,6 +1,7 @@
 import prisma from "@/lib/db/prisma";
 import { blogIdx } from "@/lib/db/pinecone";
 import { getEmbedding } from "@/lib/openai"
+
 import { auth } from "@clerk/nextjs";
 
 export async function POST(req: Request) {

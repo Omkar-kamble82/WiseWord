@@ -8,8 +8,8 @@ export default function AIChatButton() {
 
     return (
         <>
-        <p className="bg-black text-white p-4 rounded-full flex flex-col items-center text-[10px] sm:text-sm font-semibold" onClick={() => setChatBoxOpen(true)}>
-            <MessageSquareCode size={20} className="" />
+        <p className="bg-black text-white p-2 cursor-pointer rounded-full flex flex-col items-center text-[10px] sm:text-[12px] font-semibold" onClick={() => setChatBoxOpen(true)}>
+            <MessageSquareCode size={18} className="" />
             ChatBot
         </p>
         <AIChatBox open={chatBoxOpen} onClose={() => setChatBoxOpen(false)} />

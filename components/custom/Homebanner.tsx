@@ -7,7 +7,7 @@ type Props = {}
 
 const Homebanner = (props: Props) => {
     return (
-        <div className="h-[96vh] bg-slate-50 flex justify-center items-center flex-col px-5">
+        <div className="min-h-[96vh] bg-slate-50 flex justify-center items-center flex-col px-5">
             <Image height={500} width={600} className="object-contain sm:h-[420px]" src={"/home-banner.svg"} alt={"Home-banner"}/>
             <span className="text-center max-w-7xl mx-auto">
                 <h1 className="text-[23px] sm:text-[40px] font-extrabold">WiseWord: Elevate Your Reading Experience with AI-Enhanced Blogs</h1>

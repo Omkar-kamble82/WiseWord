@@ -2,6 +2,13 @@ import BlogForm from "@/components/custom/BlogForm"
 import prisma from "@/lib/db/prisma";
 import { blog } from "@/lib/types";
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Update Blog | WiseWord' ,
+    description: 'WiseWord redefines the blogging landscape by introducing an intuitive blog app accompanied by an AI chat bot. Utilizing vector embedding technology, our platform transforms your reading experience into a dynamic and insightful journey.',
+}
+
 type UpdateEventProps = {
     params: {
         id: string
