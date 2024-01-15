@@ -67,7 +67,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
             )}
             {!error && messages.length === 0 && (
                 <div className="flex h-full items-center justify-center gap-3">
-                <Bot />
+                <Image src="/icon.png" alt="icon" height={30} width={30}/>
                 Ask the AI a question about the blogs
                 </div>
             )}
