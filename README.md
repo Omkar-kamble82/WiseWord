@@ -15,9 +15,8 @@
       <li>Tailwind CSS</li>
     </ul>
 <br/>
-<img width="948" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/8593d4e4-1db6-4637-bf92-4e6517a5dc5b">
-<img width="948" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/5949a10b-bd59-44cf-87a1-bbd8785e8fb9">
-<img width="945" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/f9f69899-eb7c-47ce-a514-f3d2c131b65e">
-
-
+<img width="946" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/c03a1613-cc4f-4df6-9b3d-ea24bf317fcb">
+<img width="946" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/27504329-2d35-4250-a6b9-cdb4a76b1819">
+<img width="946" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/476c1d13-0e73-4126-9be1-b3608c01bfa1">
+<img width="943" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/662c33c4-e677-4768-ba1d-66a19eeef07f">
 
