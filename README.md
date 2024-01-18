@@ -1,5 +1,5 @@
 <h1>WiseWord</h1>
-<p><a href="https://wise-word.vercel.app/">WiseWord </a> is a AI-powered blogging application. built using Next.js, Typescript, MongoDB, Prisma ORM, UploadThing, shadcn ui library, React-hook-form and Zod for form validation, pinecone and OpenAi api. The user can perform standard CURD operations on blogs and while creating blog a vector embedding is generated using pinecone vector database; this embedding is then used by a chatbot made using OpenAI api to provide responses depending on inputs from the blog. </p>
+<p><a href="https://wise-word.vercel.app/">WiseWord </a> is a Fullstack blogging application. built using Next.js, Typescript, MongoDB, Prisma ORM, UploadThing, shadcn ui library, React-hook-form and Zod for form validation. User can perform all CRUD Operations of creating, deleting and updating the blogs. Any user can view all the post but only authorized user can update and delete the blog. </p>
 
 <br/>
 <h2>Technologyies Used</h2>
@@ -10,8 +10,7 @@
       <li>UploadThing</li>
       <li>Shadcn UI</li>
       <li>React-hook-form and Zod</li>
-      <li>Pinecone</li>
-      <li>OpenAi api</li>
+      <li>Server Components</li>
       <li>Clerk-Auth</li>
       <li>Tailwind CSS</li>
     </ul>
