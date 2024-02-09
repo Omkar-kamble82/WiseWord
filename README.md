@@ -1,13 +1,20 @@
-# WiseWord: Full stack Blog App: Next.js v14, Shadcn UI, Clerk-Auth, Prisma ORM, UploadThing
-<p><a href="https://wise-word.vercel.app/">WiseWord </a> is a Fullstack blogging application. built using Next.js, Typescript, MongoDB, Prisma ORM, UploadThing, shadcn ui library, React-hook-form and Zod for form validation. User can perform all CRUD Operations of creating, deleting and updating the blogs. Any user can view all the post but only authorized user can update and delete the blog. </p>
+# WiseWord: AI Powered Blog App : Next.js v14, Pinecone, OpenAI, Shadcn UI, Clerk-Auth, Prisma ORM, UploadThing
+<p><a href="https://wise-word.vercel.app/">WiseWord </a> is a Fullstack AI blogging application. built using Next.js, Typescript, MongoDB, Prisma ORM, UploadThing, shadcn ui library, React-hook-form and Zod for form validation. User can perform all CRUD Operations of creating, deleting and updating the blogs. Every blog is Stored as a vector embedding in Pinecone vector database and a ChatBot uses this embedding to answer questions related to blogs. Any user can view all the post but only authorized user can update and delete the blog. </p>
 
-<img width="946" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/c03a1613-cc4f-4df6-9b3d-ea24bf317fcb">
-<img width="946" alt="image" src="https://github.com/Omkar-kamble82/WiseWord/assets/96938880/27504329-2d35-4250-a6b9-cdb4a76b1819">
+![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/e4ab5106-fbbb-4845-99dc-8a97c01c1fca)
+
+
+![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/702a3436-4c12-406a-96a9-84f5f0800fec)
+![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/30c855cb-3b02-42fb-b3fb-7ae72f61fd9b)
+
+
 <br/>
 <br/>
 <h2>Key Features</h2>
 
 - Server Components
+- Vector Embedding with Pinecone
+- AI Generated Respones using OpenAI API
 - CURD Operations
 - Upload with UploadThing
 - Shadcn UI Components
@@ -45,6 +52,10 @@ DATABASE_URL=
 //Upload Thing
 UPLOADTHING_SECRET=
 UPLOADTHING_APP_IDL=
+
+//Pinecode and OpenAI
+OPENAI_API_KEY=
+PINECONE_API_KEY=
 ```
 
 ### Setup Prisma
