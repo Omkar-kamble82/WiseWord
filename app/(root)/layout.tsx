@@ -10,6 +10,7 @@ export default function RootLayout({
         <div className="">
             <Navbar />
             <main>{children}</main>
+            <span className="fixed bottom-6 right-6 "><Aibutton/></span>
         </div>
     )
 }
