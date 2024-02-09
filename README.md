@@ -7,8 +7,6 @@
 ![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/702a3436-4c12-406a-96a9-84f5f0800fec)
 ![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/30c855cb-3b02-42fb-b3fb-7ae72f61fd9b)
 
-
-<br/>
 <br/>
 <h2>Key Features</h2>
 
