@@ -1,5 +1,6 @@
 # WiseWord: AI Powered Blog App : Next.js v14, Pinecone, OpenAI, Shadcn UI, Clerk-Auth, Prisma ORM, UploadThing
 <p><a href="https://wise-word.vercel.app/">WiseWord </a> is a Fullstack AI blogging application. built using Next.js, Typescript, MongoDB, Prisma ORM, UploadThing, shadcn ui library, React-hook-form and Zod for form validation. User can perform all CRUD Operations of creating, deleting and updating the blogs. Every blog is Stored as a vector embedding in Pinecone vector database and a ChatBot uses this embedding to answer questions related to blogs. Any user can view all the post but only authorized user can update and delete the blog. </p>
+<p>*The app isn't functioning due to the api limit on the OpenAI API, but the code is correct and can be replicated using the guidelines below.</p>
 
 ![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/e4ab5106-fbbb-4845-99dc-8a97c01c1fca)
 
