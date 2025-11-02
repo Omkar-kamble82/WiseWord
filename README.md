@@ -1,6 +1,5 @@
-# WiseWord: AI Powered Blog App : Next.js v14, Pinecone, OpenAI, Shadcn UI, Clerk-Auth, Prisma ORM, UploadThing
-<p><a href="https://wise-word.vercel.app/">WiseWord </a> is a Fullstack AI blogging application. built using Next.js, Typescript, MongoDB, Prisma ORM, UploadThing, shadcn ui library, React-hook-form and Zod for form validation. User can perform all CRUD Operations of creating, deleting and updating the blogs. Every blog is Stored as a vector embedding in Pinecone vector database and a ChatBot uses this embedding to answer questions related to blogs. Any user can view all the post but only authorized user can update and delete the blog. </p>
-<p>*The app isn't functioning due to the api limit on the OpenAI API, but the code is correct and can be replicated using the guidelines below.</p>
+# 🧠 WiseWord — AI-Powered Blogging Platform
+<p><a href="https://wise-word.vercel.app/">WiseWord</a> WiseWord is a full-stack AI blogging application that combines content creation with intelligent retrieval. Built using Next.js 14, TypeScript, Pinecone, and OpenAI, it allows users to write, manage, and explore blogs — with an integrated AI chatbot that answers questions based on your blog content using vector embeddings.</p>
 
 ![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/e4ab5106-fbbb-4845-99dc-8a97c01c1fca)
 
@@ -9,17 +8,48 @@
 ![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/30c855cb-3b02-42fb-b3fb-7ae72f61fd9b)
 
 <br/>
-<h2>Key Features</h2>
+## 🧱 Tech Stack
 
-- Server Components
-- Vector Embedding with Pinecone
-- AI Generated Respones using OpenAI API
-- CURD Operations
-- Upload with UploadThing
-- Shadcn UI Components
-- Clerk Authentication
-- Prisma ORM
-- React-hook-form and Zod for form validation
+| Layer         | Technologies                              |
+| :-------------- | :--------------------------------------- |
+| Frontend |	Next.js 14, TypeScript, Shadcn UI, React-hook-form, Zod |
+| Backend |	Next.js API Routes, Prisma ORM |
+| Database |	MongoDB |
+| Vector Database |	Pinecone |
+| AI Engine |	OpenAI API |
+| Authentication |	Clerk |
+| File Uploads |	UploadThing |
+| Deployment |	Vercel |
+
+<h2>🚀 Features</h2>
+
+<h3>📝 Blogging System</h3>
+
+- Blogs are stored in MongoDB via Prisma ORM for efficient querying and schema management.
+- Perform all CRUD operations (Create, Read, Update, Delete) on blog posts.
+- Only authorized users can edit or delete their own blogs.
+
+<h3>🤖 AI-Powered Chatbot</h3>
+
+- Each blog is converted into a vector embedding and stored in Pinecone Vector Database.
+- Integrated OpenAI API generates context-aware answers to questions related to stored blogs.
+
+<h3>🪄 Modern User Experience</h3>
+
+- Built with Shadcn UI for an elegant, responsive interface.
+- React-hook-form + Zod used for robust form handling and validation.
+- UploadThing handles image/file uploads seamlessly.
+
+<h3>🔐 Authentication</h3>
+
+- Secure user authentication via Clerk — supports login, signup, and session management.
+- Access control ensures only verified users can perform write operations.
+
+<h3>🧑‍💻 Future Enhancements</h3>
+
+- Blog recommendation engine based on vector similarity.
+- Comment and like system with user interactions.
+- Email notifications for new posts or AI insights.
 
 ### Cloning the repository
 
