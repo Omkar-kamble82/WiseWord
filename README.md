@@ -8,6 +8,7 @@
 ![image](https://github.com/Omkar-kamble82/WiseWord/assets/96938880/30c855cb-3b02-42fb-b3fb-7ae72f61fd9b)
 
 <br/>
+
 ## 🧱 Tech Stack
 
 | Layer         | Technologies                              |
